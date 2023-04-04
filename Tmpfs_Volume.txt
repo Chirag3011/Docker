@@ -1,0 +1,1 @@
+docker run -d -P --name tmpfs_webserver --mount type=Bind,source=${PWD}/website,destination=/var/www/html/website,readonly nginx nginx
