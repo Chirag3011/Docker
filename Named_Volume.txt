@@ -1,0 +1,3 @@
+myvolume
+docker volume create myvolume
+docker run -d -P --name webserver -v myvolume:/var/www/html/website nginx nginx
