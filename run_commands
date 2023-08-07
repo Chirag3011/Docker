@@ -1,0 +1,5 @@
+docker build -t nginx:image01 .
+docker run --name nginx_web -it -d -p 80:80 nginx:image01 /bin/bash
+
+docker exec -it nginx_web /bin/bash
+docker exec nginx_web bash -c "hostname -i; hostname; ps -eaf | grep <process name/PID>"
