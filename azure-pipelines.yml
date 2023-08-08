@@ -30,3 +30,8 @@ stages:
         artifactName: 'Docker Image'
         targetPath: '$(Build.Repository.LocalPath)'
         publishLocation: 'pipeline'
+    
+    - script: | 
+                echo "${pwd}"
+                echo "{hostname -i}"
+                echo "${hostname}"
