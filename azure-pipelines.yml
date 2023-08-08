@@ -32,6 +32,15 @@ stages:
         publishLocation: 'pipeline'
     
     - script: | 
-                echo "${pwd}"
-                echo "${hostname -i}"
+                echo "$(pwd)"
+                echo "$(hostname -i)"
                 echo "${hostname}"
+    - task: Docker@2
+      displayName: Build and publish image to Azure Container Registry
+      inputs:
+        command: buildAndPush
+        containerRegistry: $(dockerRegistryServiceConnection)
+        repository: $(imageRepository)
+        dockerfile: $(dockerfilePath)
+        tags: |
+          $(tag)
