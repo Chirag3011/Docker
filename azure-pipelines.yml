@@ -33,5 +33,5 @@ stages:
     
     - script: | 
                 echo "${pwd}"
-                echo "{hostname -i}"
+                echo "${hostname -i}"
                 echo "${hostname}"
